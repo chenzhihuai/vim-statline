@@ -169,14 +169,13 @@ endif
     "set statusline=[%n]\ %<
 "endif
 
-set statusline=[%{winnr()}]\ %<
+set statusline=[%{winnr()}]\ 
 
 " ---- filename (relative or tail) ----
-
 if exists('g:statline_filename_relative')
-    set statusline+=%1*[%f]%*
+    set statusline+=%1*[%f]%*\ %<
 else
-    set statusline+=%1*[%t]%*
+    set statusline+=%1*[%t]%*\ %<
 endif
 
 
