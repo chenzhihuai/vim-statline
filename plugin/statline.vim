@@ -158,17 +158,18 @@ if !exists('g:statline_show_n_buffers')
     let g:statline_show_n_buffers = 1
 endif
 
-if g:statline_show_n_buffers
-    set statusline=[%{StatlineBufCount()}\:%n]\ %<
-    " only calculate buffers after adding/removing buffers
-    augroup statline_nbuf
-        autocmd!
-        autocmd BufAdd,BufDelete * unlet! s:statline_n_buffers
-    augroup END
-else
-    set statusline=[%n]\ %<
-endif
+"if g:statline_show_n_buffers
+    "set statusline=[%{StatlineBufCount()}\:%n]\ %<
+    "" only calculate buffers after adding/removing buffers
+    "augroup statline_nbuf
+        "autocmd!
+        "autocmd BufAdd,BufDelete * unlet! s:statline_n_buffers
+    "augroup END
+"else
+    "set statusline=[%n]\ %<
+"endif
 
+set statusline=[%{winnr()}]\ %<
 
 " ---- filename (relative or tail) ----
 
@@ -224,7 +225,7 @@ set statusline+=%-14(\ L%l/%L:C%c\ %)
 
 set statusline+=%P
 
-set statusline+=\ [%{StatlineScrollbar(16,'⠀','⠿')}]\ 
+set statusline+=[%{StatlineScrollbar(10,'⠀','⠿')}]
 
 
 " ---- code of character under cursor ----
