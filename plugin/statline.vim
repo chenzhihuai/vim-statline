@@ -223,7 +223,7 @@ set statusline+=%-14(\ L%l/%L:C%c\ %)
 
 " ----  scroll percent ----
 
-set statusline+=%P
+"set statusline+=%P
 
 set statusline+=[%{StatlineScrollbar(10,'⠀','⠿')}]
 
